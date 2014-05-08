@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>test heatmap calendar</title>
+        
+        <link rel="stylesheet" href="css/cal-heatmap.css" />
+		<script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/cal-heatmap.min.js"></script>
+	</head>
+	<body>
+
+	<div id="cal-heatmap"></div>
+
+	<script type="text/javascript">
+		var cal = new CalHeatMap();
+		cal.init({
+				domain: "day",
+				subdomaine : "hour",
+				start: new Date(2014, 4, 15),
+				colLimit: 24,
+				range: 30,
+				verticalOrientation: "true",
+				label: {
+					position: "left",
+					width: 60,
+					offset: {x:0 ,y:10}
+				},
+				domainMargin: 0,
+				domainGutter: 5,
+				displayLegend: false,
+				legend:[1, 2, 3],
+				legendColors: {
+						min: "#d2de76",
+						max: "#ad001d",
+						empty: "#d2de76"
+					},
+				// dataType: "csv",
+				data:"data/ts.json"
+			});
+	</script>
+	</body>
+</html>

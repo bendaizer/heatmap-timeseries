@@ -3,9 +3,9 @@
     <head>
     	<title>test heatmap calendar</title>
         
-        <link rel="stylesheet" href="css/cal-heatmap.css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/cal-heatmap.css') }}" />
 		<script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="js/cal-heatmap.min.js"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/cal-heatmap.min.js') }}"></script>
 	</head>
 	<body>
 
@@ -35,7 +35,8 @@
 						empty: "#d2de76"
 					},
 				// dataType: "csv",
-				data:"data/ts.json"
+				//data:"data/ts.json"
+                data: "http://127.0.0.1:8000/data"
 			});
 	</script>
 	</body>
